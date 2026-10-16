@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>排球少年靈感 T 恤設計｜專案板</title>
+  <meta name="description" content="可商用排球主題 T 恤設計專案可視化看板" />
+  <style>
+    :root {
+      --bg: #0a0a0b;
+      --bg-elevated: #141416;
+      --bg-card: #1a1a1e;
+      --border: #2a2a30;
+      --text: #f2f0eb;
+      --text-muted: #9a9690;
+      --accent: #ff6b1a;
+      --accent-soft: rgba(255, 107, 26, 0.15);
+      --accent-glow: rgba(255, 107, 26, 0.35);
+      --warn: #f5c542;
+      --warn-bg: rgba(245, 197, 66, 0.12);
+      --ok: #3dd68c;
+      --ok-bg: rgba(61, 214, 140, 0.12);
+      --danger: #ff5c5c;
+      --danger-bg: rgba(255, 92, 92, 0.12);
+      --info: #5b9fff;
+      --info-bg: rgba(91, 159, 255, 0.12);
+      --purple: #b794f6;
+      --purple-bg: rgba(183, 148, 246, 0.12);
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.45);
+      --font: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Helvetica Neue", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255,107,26,0.18), transparent),
+        radial-gradient(ellipse 40% 30% at 100% 80%, rgba(255,107,26,0.06), transparent);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+
+    /* Header */
+    header.hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      padding: 28px 24px;
+      background: linear-gradient(135deg, var(--bg-elevated) 0%, #1c1410 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-left { position: relative; z-index: 1; flex: 1; min-width: 240px; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(255,107,26,0.35);
+    }
+    .chip.muted {
+      background: rgba(255,255,255,0.06);
+      color: var(--text-muted);
+      border-color: var(--border);
+    }
+    h1 {
+      font-size: clamp(1.35rem, 4vw, 1.85rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 520px;
+    }
+    .hero-meta {
+      position: relative;
+      z-index: 1;
+      text-align: right;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .hero-meta strong { color: var(--text); display: block; font-size: 14px; margin-bottom: 4px; }
+    .pulse {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 6px;
+      box-shadow: 0 0 0 0 var(--accent-glow);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 var(--accent-glow); }
+      70% { box-shadow: 0 0 0 10px transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+
+    /* Legal banner */
+    .legal {
+      background: var(--warn-bg);
+      border: 1px solid rgba(245, 197, 66, 0.45);
+      border-left: 4px solid var(--warn);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 28px;
+    }
+    .legal h2 {
+      font-size: 0.95rem;
+      color: var(--warn);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .legal p { font-size: 0.88rem; color: #e8d9a8; margin-bottom: 6px; }
+    .legal p:last-child { margin-bottom: 0; }
+    .legal .route {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(245,197,66,0.3);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Sections */
+    section { margin-bottom: 36px; }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .section-head h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-head h2 .num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+    }
+    .section-head .hint { font-size: 13px; color: var(--text-muted); }
+
+    /* Status summary */
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-card .val {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+    .stat-card .lbl { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    /* Workflow */
+    .workflow {
+      display: grid;
+      gap: 10px;
+    }
+    @media (min-width: 700px) {
+      .workflow { grid-template-columns: repeat(5, 1fr); }
+    }
+    .step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 12px;
+      position: relative;
+      min-height: 110px;
+    }
+    .step.active {
+      border-color: rgba(255,107,26,0.55);
+      background: linear-gradient(180deg, rgba(255,107,26,0.12), var(--bg-card));
+      box-shadow: 0 0 0 1px rgba(255,107,26,0.15);
+    }
+    .step.done { opacity: 0.85; }
+    .step .step-n {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      letter-spacing: 0.06em;
+    }
+    .step h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; line-height: 1.35; }
+    .step .step-status {
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* Status pills */
+    .pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+    .pill-pending { background: var(--warn-bg); color: var(--warn); }
+    .pill-selected { background: var(--ok-bg); color: var(--ok); }
+    .pill-rejected { background: var(--danger-bg); color: var(--danger); }
+    .pill-designing { background: var(--info-bg); color: var(--info); }
+    .pill-done { background: var(--purple-bg); color: var(--purple); }
+    .pill-progress { background: var(--accent-soft); color: var(--accent); }
+    .pill-wait { background: rgba(255,255,255,0.06); color: var(--text-muted); }
+
+    /* Cards grid */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .card:hover {
+      border-color: rgba(255,107,26,0.4);
+      transform: translateY(-2px);
+    }
+    .card-thumb {
+      aspect-ratio: 4/3;
+      background:
+        linear-gradient(135deg, #1e1e24 25%, transparent 25%) -10px 0 / 20px 20px,
+        linear-gradient(225deg, #1e1e24 25%, transparent 25%) -10px 0 / 20px 20px,
+        linear-gradient(315deg, #1e1e24 25%, transparent 25%) 0px 0 / 20px 20px,
+        linear-gradient(45deg, #1e1e24 25%, #16161a 25%) 0px 0 / 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-thumb .placeholder-icon {
+      font-size: 2rem;
+      opacity: 0.5;
+      margin-bottom: 4px;
+    }
+    .card-thumb .ph-inner { text-align: center; padding: 12px; }
+    .card-body { padding: 14px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .card-id {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+    .card-title { font-size: 0.95rem; font-weight: 700; line-height: 1.35; }
+    .card-meta { font-size: 12px; color: var(--text-muted); }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 4px;
+    }
+
+    .empty-state {
+      background: var(--bg-card);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-muted);
+    }
+    .empty-state strong { color: var(--text); display: block; margin-bottom: 6px; font-size: 1rem; }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* Numbering guide */
+    .guide {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .guide code {
+      font-family: ui-monospace, Menlo, monospace;
+      background: rgba(255,107,26,0.12);
+      color: var(--accent);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-left">
+        <div class="badge-row">
+          <span class="chip"><span class="pulse"></span>進行中</span>
+          <span class="chip muted">商業販售路線</span>
+          <span class="chip muted">Typography 為主</span>
+        </div>
+        <h1>排球少年靈感 T 恤設計</h1>
+        <p class="subtitle">參考 Kittl typography 技巧，用可商用剪影＋原創字體排版，做出可合法販售嘅排球主題 T 恤。</p>
+      </div>
+      <div class="hero-meta">
+        <strong>專案負責人</strong>
+        Tshirt設計員
+        <div style="margin-top:12px">
+          <strong>最後更新</strong>
+          <span id="lastUpdated">2026-10-16 15:47 HKT</span>
+        </div>
+        <div style="margin-top:12px">
+          <strong>而家階段</strong>
+          建立可視化專案板 → 收集可商用素材
+        </div>
+      </div>
+    </header>
+
+    <div class="legal" id="legal">
+      <h2>⚠️ 版權重要提醒（必讀）</h2>
+      <p>集英社／古舘春一《排球少年!!》角色、官方插圖、作品名、經典台詞、可識別角色繪面，<strong>未經授權不可用作商品販售</strong>。官方下載素材亦只供個人粉絲用途。</p>
+      <p class="route">本專案商用路線：只用可商用免費素材（排球／烏鴉剪影等）＋原創字體排版設計（參考 Kittl typography T-shirt 技巧），<strong>不使用官方角色圖</strong>。</p>
+    </div>
+
+    <section id="status">
+      <div class="section-head">
+        <h2><span class="num">01</span> 專案狀態</h2>
+      </div>
+      <div class="status-grid">
+        <div class="stat-card">
+          <div class="val" id="statMaterials">4</div>
+          <div class="lbl">素材（待審）</div>
+        </div>
+        <div class="stat-card">
+          <div class="val" id="statDesigns">0</div>
+          <div class="lbl">設計稿</div>
+        </div>
+        <div class="stat-card">
+          <div class="val">1 / 5</div>
+          <div class="lbl">流程進度</div>
+        </div>
+        <div class="stat-card">
+          <div class="val" style="color:var(--warn);font-size:1.2rem;padding-top:6px">待你揀</div>
+          <div class="lbl">下一步</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow">
+      <div class="section-head">
+        <h2><span class="num">02</span> 流程</h2>
+        <span class="hint">橙色邊框 = 進行中</span>
+      </div>
+      <div class="workflow">
+        <div class="step active">
+          <div class="step-n">STEP 1</div>
+          <h3>收集可商用素材</h3>
+          <span class="pill pill-progress">進行中</span>
+        </div>
+        <div class="step">
+          <div class="step-n">STEP 2</div>
+          <h3>用戶審核素材編號</h3>
+          <span class="pill pill-wait">等候中</span>
+        </div>
+        <div class="step">
+          <div class="step-n">STEP 3</div>
+          <h3>用 typography 技巧出 T 恤稿</h3>
+          <span class="pill pill-wait">等候中</span>
+        </div>
+        <div class="step">
+          <div class="step-n">STEP 4</div>
+          <h3>用戶逐個批デザイン</h3>
+          <span class="pill pill-wait">等候中</span>
+        </div>
+        <div class="step">
+          <div class="step-n">STEP 5</div>
+          <h3>準備落單印刷／上架</h3>
+          <span class="pill pill-wait">等候中</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="materials">
+      <div class="section-head">
+        <h2><span class="num">03</span> 素材庫</h2>
+        <span class="hint">編號 <code style="color:var(--accent)">M-xxx</code> · 回覆編號即可揀／否決</span>
+      </div>
+      <div class="legend">
+        <span><span class="pill pill-pending">待審</span> 等你睇</span>
+        <span><span class="pill pill-selected">已選用</span></span>
+        <span><span class="pill pill-rejected">已否決</span></span>
+      </div>
+      <div class="cards" id="materialCards">
+        <!-- M-001 -->
+        <article class="card" data-id="M-001">
+          <div class="card-thumb">
+            <div class="ph-inner">
+              <div class="placeholder-icon">🏐</div>
+              <div>圖片待載入</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-id">M-001</div>
+            <div class="card-title">排球運動員動作剪影</div>
+            <div class="card-meta">授權：CC0　來源計畫：svgitem.com volleyball player silhouette</div>
+            <div class="card-footer">
+              <span class="pill pill-pending">待審</span>
+            </div>
+          </div>
+        </article>
+        <!-- M-002 -->
+        <article class="card" data-id="M-002">
+          <div class="card-thumb">
+            <div class="ph-inner">
+              <div class="placeholder-icon">⚫</div>
+              <div>圖片待載入</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-id">M-002</div>
+            <div class="card-title">排球球體剪影</div>
+            <div class="card-meta">授權：CC0　來源計畫：svgrepo.com volleyball silhouette</div>
+            <div class="card-footer">
+              <span class="pill pill-pending">待審</span>
+            </div>
+          </div>
+        </article>
+        <!-- M-003 -->
+        <article class="card" data-id="M-003">
+          <div class="card-thumb">
+            <div class="ph-inner">
+              <div class="placeholder-icon">🐦</div>
+              <div>圖片待載入</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-id">M-003</div>
+            <div class="card-title">烏鴉／飛鳥剪影</div>
+            <div class="card-meta">授權：CC0　來源計畫：clipsafari / freesvg crow silhouette</div>
+            <div class="card-footer">
+              <span class="pill pill-pending">待審</span>
+            </div>
+          </div>
+        </article>
+        <!-- M-004 -->
+        <article class="card" data-id="M-004">
+          <div class="card-thumb">
+            <div class="ph-inner">
+              <div class="placeholder-icon">📐</div>
+              <div>圖片待載入</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-id">M-004</div>
+            <div class="card-title">低面數排球員剪影</div>
+            <div class="card-meta">授權：Public Domain　來源計畫：freesvg.org</div>
+            <div class="card-footer">
+              <span class="pill pill-pending">待審</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="designs">
+      <div class="section-head">
+        <h2><span class="num">04</span> 設計稿</h2>
+        <span class="hint">編號 <code style="color:var(--accent)">D-xxx</code></span>
+      </div>
+      <div class="legend">
+        <span><span class="pill pill-designing">設計中</span></span>
+        <span><span class="pill pill-pending">待審</span></span>
+        <span><span class="pill pill-selected">已選用</span></span>
+        <span><span class="pill pill-rejected">已否決</span></span>
+        <span><span class="pill pill-done">完成</span></span>
+      </div>
+      <div class="empty-state" id="designEmpty">
+        <strong>設計稿尚未開始</strong>
+        你揀咗素材之後先會出現 D-001…
+      </div>
+    </section>
+
+    <section id="numbering">
+      <div class="section-head">
+        <h2><span class="num">05</span> 編號同溝通方式</h2>
+      </div>
+      <div class="guide">
+        <p style="margin-bottom:8px">同 Tshirt設計員溝通時，直接講編號就得，例如：</p>
+        <ul style="padding-left:1.2em;margin-bottom:10px">
+          <li>「<code>M-001</code>、<code>M-003</code> 我要，其他否決」</li>
+          <li>「用 <code>M-002</code> 出一款 arc 字排版，口號用『FLY HIGH』原創方向（唔好抄官方台詞）」</li>
+          <li>「<code>D-001</code> 字距收窄少少，再出 <code>D-002</code>」</li>
+        </ul>
+        <p>狀態標籤：<code>待審</code> / <code>已選用</code> / <code>已否決</code> / <code>設計中</code> / <code>完成</code></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>排球少年靈感 T 恤設計專案板 · 非官方、無授權角色圖 · 僅可商用素材＋原創排版</p>
+      <p style="margin-top:6px">檔案位置：<code>/workspace/haikyuu-tee-project/index.html</code></p>
+    </footer>
+  </div>
+</body>
+</html>
