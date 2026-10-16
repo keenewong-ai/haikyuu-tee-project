@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-label="Volleyball player action silhouette">
+  <title>M-001 Volleyball player silhouette</title>
+  <!-- Original geometric silhouette — spike / jump serve pose -->
+  <g fill="#f2f0eb">
+    <!-- head -->
+    <ellipse cx="118" cy="38" rx="16" ry="18"/>
+    <!-- torso -->
+    <path d="M95 58 L140 62 L148 120 L88 118 Z"/>
+    <!-- right arm raised (spike) -->
+    <path d="M138 68 L168 42 L178 52 L152 82 Z"/>
+    <ellipse cx="178" cy="40" rx="10" ry="12"/>
+    <!-- left arm forward -->
+    <path d="M95 78 L55 95 L60 108 L100 92 Z"/>
+    <!-- ball near hand -->
+    <circle cx="52" cy="88" r="14" fill="none" stroke="#f2f0eb" stroke-width="3"/>
+    <path d="M40 82 Q52 88 64 82 M52 74 Q48 88 52 102" fill="none" stroke="#f2f0eb" stroke-width="2"/>
+    <!-- right leg bent -->
+    <path d="M120 118 L145 170 L128 178 L105 125 Z"/>
+    <!-- left leg extended down -->
+    <path d="M100 118 L85 195 L105 200 L118 122 Z"/>
+    <!-- shorts hint -->
+    <path d="M88 110 L148 112 L145 125 L90 122 Z" opacity="0.35"/>
+  </g>
+</svg>

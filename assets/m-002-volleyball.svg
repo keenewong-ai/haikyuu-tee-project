@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Volleyball ball silhouette">
+  <title>M-002 Volleyball silhouette</title>
+  <g fill="none" stroke="#f2f0eb" stroke-width="5" stroke-linecap="round">
+    <circle cx="100" cy="100" r="78" fill="#f2f0eb" stroke="none"/>
+    <g stroke="#0a0a0b" stroke-width="4.5">
+      <!-- classic volleyball panel curves -->
+      <path d="M100 22 C70 55, 70 145, 100 178"/>
+      <path d="M100 22 C130 55, 130 145, 100 178"/>
+      <path d="M28 70 C70 85, 130 85, 172 70"/>
+      <path d="M28 130 C70 115, 130 115, 172 130"/>
+      <path d="M45 40 C80 70, 120 70, 155 40"/>
+      <path d="M45 160 C80 130, 120 130, 155 160"/>
+    </g>
+  </g>
+</svg>

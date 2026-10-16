@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 160" role="img" aria-label="Flying crow silhouette">
+  <title>M-003 Crow silhouette</title>
+  <g fill="#f2f0eb">
+    <!-- body -->
+    <ellipse cx="140" cy="88" rx="36" ry="22"/>
+    <!-- head -->
+    <ellipse cx="178" cy="72" rx="16" ry="14"/>
+    <!-- beak -->
+    <path d="M190 70 L218 66 L192 78 Z"/>
+    <!-- left wing up -->
+    <path d="M130 80 C90 40, 40 20, 18 28 C55 45, 85 70, 115 95 Z"/>
+    <!-- right wing up -->
+    <path d="M150 78 C175 35, 220 12, 262 22 C230 40, 195 65, 165 92 Z"/>
+    <!-- tail -->
+    <path d="M108 90 L72 105 L78 118 L112 100 Z"/>
+    <path d="M110 95 L80 125 L92 128 L118 102 Z"/>
+    <!-- legs tucked -->
+    <path d="M145 105 L138 128 L145 128 L152 108" opacity="0.85"/>
+    <path d="M155 104 L152 126 L160 126 L162 106" opacity="0.85"/>
+  </g>
+</svg>
