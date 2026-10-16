@@ -301,6 +301,14 @@
     }
     .card-thumb .ph-inner { text-align: center; padding: 12px; }
 
+
+    .card-thumb img[src$=".jpg"],
+    .card-thumb img[src$=".jpeg"],
+    .card-thumb img[src$=".png"] {
+      object-fit: cover;
+      padding: 0;
+    }
+
     .card-thumb img {
       width: 100%;
       height: 100%;
@@ -396,7 +404,7 @@
         Tshirt設計員
         <div style="margin-top:12px">
           <strong>最後更新</strong>
-          <span id="lastUpdated">2026-10-16 16:09 HKT</span>
+          <span id="lastUpdated">2026-10-16 16:17 HKT</span>
         </div>
         <div style="margin-top:12px">
           <strong>而家階段</strong>
@@ -417,7 +425,7 @@
       </div>
       <div class="status-grid">
         <div class="stat-card">
-          <div class="val" id="statMaterials">4</div>
+          <div class="val" id="statMaterials">7</div>
           <div class="lbl">素材（待審）</div>
         </div>
         <div class="stat-card">
@@ -478,6 +486,10 @@
         <span><span class="pill pill-pending">待審</span> 等你睇</span>
         <span><span class="pill pill-selected">已選用</span></span>
         <span><span class="pill pill-rejected">已否決</span></span>
+      </div>
+
+      <div class="guide" style="margin-bottom:14px">
+        <p><strong style="color:var(--text)">M-005 起：</strong>原創剪影，只參考姿勢／構圖靈感（commercial-safer）。用戶上傳嘅漫畫／角色參考圖存放喺 <code>refs/</code>，僅供靈感，<strong>唔會原樣上架或販售</strong>。</p>
       </div>
       <div class="cards" id="materialCards">
         <!-- M-001 -->
@@ -552,6 +564,62 @@
             </div>
           </div>
         </article>
+
+        <!-- M-005 -->
+        <article class="card" data-id="M-005">
+          <div class="card-thumb">
+            <img src="assets/m-005-spike-jump.jpg" alt="扣球跳躍剪影" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="ph-inner" style="display:none">
+              <div class="placeholder-icon">🏐</div>
+              <div>圖片待載入</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-id">M-005</div>
+            <div class="card-title">扣球跳躍剪影</div>
+            <div class="card-meta">授權：原創剪影（可商用）　由用戶背滑動作圖靈感嘅原創剪影（非角色描摹）</div>
+            <div class="card-footer">
+              <span class="pill pill-pending">待審</span>
+            </div>
+          </div>
+        </article>
+        <!-- M-006 -->
+        <article class="card" data-id="M-006">
+          <div class="card-thumb">
+            <img src="assets/m-006-rivalry.jpg" alt="對決雙人剪影" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="ph-inner" style="display:none">
+              <div class="placeholder-icon">⚔️</div>
+              <div>圖片待載入</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-id">M-006</div>
+            <div class="card-title">對決雙人剪影</div>
+            <div class="card-meta">授權：原創剪影（可商用）　雙人對望姿勢靈感</div>
+            <div class="card-footer">
+              <span class="pill pill-pending">待審</span>
+            </div>
+          </div>
+        </article>
+        <!-- M-007 -->
+        <article class="card" data-id="M-007">
+          <div class="card-thumb">
+            <img src="assets/m-007-duel.jpg" alt="爭球對峙剪影" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="ph-inner" style="display:none">
+              <div class="placeholder-icon">🔥</div>
+              <div>圖片待載入</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-id">M-007</div>
+            <div class="card-title">爭球對峙剪影</div>
+            <div class="card-meta">授權：原創剪影（可商用）　雙人爭球動作靈感</div>
+            <div class="card-footer">
+              <span class="pill pill-pending">待審</span>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
